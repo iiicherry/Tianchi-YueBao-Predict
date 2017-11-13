@@ -147,6 +147,8 @@ m.plot_components(forecast)
 #check the fitting results
 plt.ylabel('redeem')
 plt.xlabel('Day')
+plt.plot(ts['ds'],xdata,label = 'true' )
+plt.plot(ts['ds'],np.exp(forecast.iloc[:-30,-1].values),label = 'predict' )
 
 #save redeem predict values
 redeem = np.exp(forecast.iloc[-30:,-1].values)
